@@ -11,15 +11,34 @@ contract StructContract {
     mapping (uint256 => Player) PlayersMap;
     Player[] PlayersArr;
     
-    function addPlayerToMap(string name) returns(bool) {
-        id = idSeed_++;
+    function addPlayerToMap(string name) public returns(uint256 n) {
+        uint256 id = idSeed_++;
         PlayersMap[id] = Player(id, name);
-        return true;
+        return id;
     }
     
-    function addPlayerToArr(string name) {
-        id = PlayersArr.length+1;
-        
-        
+    function addPlayerToArr(string name) public returns(uint256 n){
+        uint256 id = PlayersArr.length+1;
+        PlayersArr.push(Player(id, name));
+        return PlayersArr.length;
+    }
+    
+    function getPlayerFromMap(uint256 id) public view returns(uint256, string) {
+        require(id > 0);
+        Player memory player = PlayersMap[id];
+        if (player.id == 0) {
+            return (0, "");
+        }
+        return (player.id, player.name);
+    }
+    
+    function getPlayerFromArr(uint256 id) public view returns(uint256, string) {
+        require(id > 0);
+        id -= 1;
+        Player memory player = PlayersArr[id];
+        if (player.id == 0) {
+            return (0, "");
+        }
+        return (player.id, player.name);
     }
 }
