@@ -1,0 +1,54 @@
+
+======= c1.sol:C =======
+EVM assembly:
+    /* "c1.sol":26:93  contract C {... */
+  mstore(0x40, 0x80)
+    /* "c1.sol":58:91  function C() {... */
+  callvalue
+    /* "--CODEGEN--":8:17   */
+  dup1
+    /* "--CODEGEN--":5:7   */
+  iszero
+  tag_1
+  jumpi
+    /* "--CODEGEN--":30:31   */
+  0x0
+    /* "--CODEGEN--":27:28   */
+  dup1
+    /* "--CODEGEN--":20:32   */
+  revert
+    /* "--CODEGEN--":5:7   */
+tag_1:
+    /* "c1.sol":58:91  function C() {... */
+  pop
+    /* "c1.sol":83:84  1 */
+  0x1
+    /* "c1.sol":79:80  a */
+  0x0
+    /* "c1.sol":79:84  a = 1 */
+  dup2
+  swap1
+  sstore
+  pop
+    /* "c1.sol":26:93  contract C {... */
+  dataSize(sub_0)
+  dup1
+  dataOffset(sub_0)
+  0x0
+  codecopy
+  0x0
+  return
+stop
+
+sub_0: assembly {
+        /* "c1.sol":26:93  contract C {... */
+      mstore(0x40, 0x80)
+      0x0
+      dup1
+      revert
+
+    auxdata: 0xa165627a7a723058200772fd4d1e7a10411b0a514cf462cb97460bc529c0b0f81d25108c9229330cef0029
+}
+
+Binary: 
+6080604052348015600f57600080fd5b50600160008190555060358060256000396000f3006080604052600080fd00a165627a7a723058200772fd4d1e7a10411b0a514cf462cb97460bc529c0b0f81d25108c9229330cef0029
