@@ -1,0 +1,397 @@
+
+======= lib.sol:MathLib =======
+EVM assembly:
+    /* "lib.sol":26:151  library MathLib {... */
+  dataSize(sub_0)
+  dataOffset(sub_0)
+    /* "--CODEGEN--":132:134   */
+  0xb
+    /* "--CODEGEN--":166:173   */
+  dup3
+    /* "--CODEGEN--":155:164   */
+  dup3
+    /* "--CODEGEN--":146:153   */
+  dup3
+    /* "--CODEGEN--":137:174   */
+  codecopy
+    /* "--CODEGEN--":252:259   */
+  dup1
+    /* "--CODEGEN--":246:260   */
+  mload
+    /* "--CODEGEN--":243:244   */
+  0x0
+    /* "--CODEGEN--":238:261   */
+  byte
+    /* "--CODEGEN--":232:236   */
+  0x73
+    /* "--CODEGEN--":229:262   */
+  eq
+    /* "--CODEGEN--":270:271   */
+  0x0
+    /* "--CODEGEN--":265:285   */
+  dup2
+  eq
+  tag_2
+  jumpi
+    /* "--CODEGEN--":222:285   */
+  jump(tag_1)
+    /* "--CODEGEN--":265:285   */
+tag_2:
+    /* "--CODEGEN--":274:283   */
+  invalid
+    /* "--CODEGEN--":222:285   */
+tag_1:
+  pop
+    /* "--CODEGEN--":298:307   */
+  address
+    /* "--CODEGEN--":295:296   */
+  0x0
+    /* "--CODEGEN--":288:308   */
+  mstore
+    /* "--CODEGEN--":328:332   */
+  0x73
+    /* "--CODEGEN--":319:326   */
+  dup2
+    /* "--CODEGEN--":311:333   */
+  mstore8
+    /* "--CODEGEN--":352:359   */
+  dup3
+    /* "--CODEGEN--":343:350   */
+  dup2
+    /* "--CODEGEN--":336:360   */
+  return
+stop
+
+sub_0: assembly {
+        /* "lib.sol":26:151  library MathLib {... */
+      eq(address, deployTimeAddress())
+      mstore(0x40, 0x80)
+      jumpi(tag_1, lt(calldatasize, 0x4))
+      calldataload(0x0)
+      0x100000000000000000000000000000000000000000000000000000000
+      swap1
+      div
+      0xffffffff
+      and
+      dup1
+      0x7afbe4f1
+      eq
+      tag_2
+      jumpi
+    tag_1:
+      0x0
+      dup1
+      revert
+        /* "lib.sol":48:148  function Add(uint256 self, uint256 n) public pure returns (uint256) {... */
+    tag_2:
+      tag_3
+      0x4
+      dup1
+      calldatasize
+      sub
+      dup2
+      add
+      swap1
+      dup1
+      dup1
+      calldataload
+      swap1
+      0x20
+      add
+      swap1
+      swap3
+      swap2
+      swap1
+      dup1
+      calldataload
+      swap1
+      0x20
+      add
+      swap1
+      swap3
+      swap2
+      swap1
+      pop
+      pop
+      pop
+      jump(tag_4)
+    tag_3:
+      mload(0x40)
+      dup1
+      dup3
+      dup2
+      mstore
+      0x20
+      add
+      swap2
+      pop
+      pop
+      mload(0x40)
+      dup1
+      swap2
+      sub
+      swap1
+      return
+    tag_4:
+        /* "lib.sol":107:114  uint256 */
+      0x0
+        /* "lib.sol":140:141  n */
+      dup2
+        /* "lib.sol":133:137  self */
+      dup4
+        /* "lib.sol":133:141  self + n */
+      add
+        /* "lib.sol":126:141  return self + n */
+      swap1
+      pop
+        /* "lib.sol":48:148  function Add(uint256 self, uint256 n) public pure returns (uint256) {... */
+      swap3
+      swap2
+      pop
+      pop
+      jump	// out
+
+    auxdata: 0xa165627a7a723058205212c1d10f82d046a16a8ed952e533675a0eb15ed61e37650f64d259787ce4a30029
+}
+
+Binary: 
+60d061002f600b82828239805160001a6073146000811461001f57610021565bfe5b5030600052607381538281f30073000000000000000000000000000000000000000030146080604052600436106056576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680637afbe4f114605b575b600080fd5b608160048036038101908080359060200190929190803590602001909291905050506097565b6040518082815260200191505060405180910390f35b60008183019050929150505600a165627a7a723058205212c1d10f82d046a16a8ed952e533675a0eb15ed61e37650f64d259787ce4a30029
+
+======= libtest.sol:LibTest =======
+EVM assembly:
+    /* "libtest.sol":64:228  contract LibTest {... */
+  mstore(0x40, 0x80)
+  callvalue
+    /* "--CODEGEN--":8:17   */
+  dup1
+    /* "--CODEGEN--":5:7   */
+  iszero
+  tag_1
+  jumpi
+    /* "--CODEGEN--":30:31   */
+  0x0
+    /* "--CODEGEN--":27:28   */
+  dup1
+    /* "--CODEGEN--":20:32   */
+  revert
+    /* "--CODEGEN--":5:7   */
+tag_1:
+    /* "libtest.sol":64:228  contract LibTest {... */
+  pop
+  dataSize(sub_0)
+  dup1
+  dataOffset(sub_0)
+  0x0
+  codecopy
+  0x0
+  return
+stop
+
+sub_0: assembly {
+        /* "libtest.sol":64:228  contract LibTest {... */
+      mstore(0x40, 0x80)
+      jumpi(tag_1, lt(calldatasize, 0x4))
+      calldataload(0x0)
+      0x100000000000000000000000000000000000000000000000000000000
+      swap1
+      div
+      0xffffffff
+      and
+      dup1
+      0xc2985578
+      eq
+      tag_2
+      jumpi
+    tag_1:
+      0x0
+      dup1
+      revert
+        /* "libtest.sol":123:226  function foo() public pure returns(uint256) {... */
+    tag_2:
+      callvalue
+        /* "--CODEGEN--":8:17   */
+      dup1
+        /* "--CODEGEN--":5:7   */
+      iszero
+      tag_3
+      jumpi
+        /* "--CODEGEN--":30:31   */
+      0x0
+        /* "--CODEGEN--":27:28   */
+      dup1
+        /* "--CODEGEN--":20:32   */
+      revert
+        /* "--CODEGEN--":5:7   */
+    tag_3:
+        /* "libtest.sol":123:226  function foo() public pure returns(uint256) {... */
+      pop
+      tag_4
+      jump(tag_5)
+    tag_4:
+      mload(0x40)
+      dup1
+      dup3
+      dup2
+      mstore
+      0x20
+      add
+      swap2
+      pop
+      pop
+      mload(0x40)
+      dup1
+      swap2
+      sub
+      swap1
+      return
+    tag_5:
+        /* "libtest.sol":158:165  uint256 */
+      0x0
+        /* "libtest.sol":177:186  uint256 a */
+      dup1
+        /* "libtest.sol":189:192  100 */
+      0x64
+        /* "libtest.sol":177:192  uint256 a = 100 */
+      swap1
+      pop
+        /* "libtest.sol":209:210  a */
+      dup1
+        /* "libtest.sol":209:214  a.Add */
+      linkerSymbol("669a04a03ae27c9afefd3a529b2b590e8f7252b85b66a41b95af62d0fcbae050")
+      0x7afbe4f1
+      swap1
+      swap2
+        /* "libtest.sol":215:218  200 */
+      0xc8
+        /* "libtest.sol":209:219  a.Add(200) */
+      mload(0x40)
+      dup4
+      0xffffffff
+      and
+      0x100000000000000000000000000000000000000000000000000000000
+      mul
+      dup2
+      mstore
+      0x4
+      add
+      dup1
+      dup4
+      dup2
+      mstore
+      0x20
+      add
+      dup3
+      dup2
+      mstore
+      0x20
+      add
+      swap3
+      pop
+      pop
+      pop
+      0x20
+      mload(0x40)
+      dup1
+      dup4
+      sub
+      dup2
+      dup7
+      dup1
+      extcodesize
+      iszero
+        /* "--CODEGEN--":8:17   */
+      dup1
+        /* "--CODEGEN--":5:7   */
+      iszero
+      tag_7
+      jumpi
+        /* "--CODEGEN--":30:31   */
+      0x0
+        /* "--CODEGEN--":27:28   */
+      dup1
+        /* "--CODEGEN--":20:32   */
+      revert
+        /* "--CODEGEN--":5:7   */
+    tag_7:
+        /* "libtest.sol":209:219  a.Add(200) */
+      pop
+      gas
+      delegatecall
+      iszero
+        /* "--CODEGEN--":8:17   */
+      dup1
+        /* "--CODEGEN--":5:7   */
+      iszero
+      tag_8
+      jumpi
+        /* "--CODEGEN--":45:61   */
+      returndatasize
+        /* "--CODEGEN--":42:43   */
+      0x0
+        /* "--CODEGEN--":39:40   */
+      dup1
+        /* "--CODEGEN--":24:62   */
+      returndatacopy
+        /* "--CODEGEN--":77:93   */
+      returndatasize
+        /* "--CODEGEN--":74:75   */
+      0x0
+        /* "--CODEGEN--":67:94   */
+      revert
+        /* "--CODEGEN--":5:7   */
+    tag_8:
+        /* "libtest.sol":209:219  a.Add(200) */
+      pop
+      pop
+      pop
+      pop
+      mload(0x40)
+      returndatasize
+        /* "--CODEGEN--":13:15   */
+      0x20
+        /* "--CODEGEN--":8:11   */
+      dup2
+        /* "--CODEGEN--":5:16   */
+      lt
+        /* "--CODEGEN--":2:4   */
+      iszero
+      tag_9
+      jumpi
+        /* "--CODEGEN--":29:30   */
+      0x0
+        /* "--CODEGEN--":26:27   */
+      dup1
+        /* "--CODEGEN--":19:31   */
+      revert
+        /* "--CODEGEN--":2:4   */
+    tag_9:
+        /* "libtest.sol":209:219  a.Add(200) */
+      dup2
+      add
+      swap1
+      dup1
+      dup1
+      mload
+      swap1
+      0x20
+      add
+      swap1
+      swap3
+      swap2
+      swap1
+      pop
+      pop
+      pop
+        /* "libtest.sol":202:219  return a.Add(200) */
+      swap2
+      pop
+        /* "libtest.sol":123:226  function foo() public pure returns(uint256) {... */
+      pop
+      swap1
+      jump	// out
+
+    auxdata: 0xa165627a7a72305820e747704086fc06d1d64c0bf96e8b71a21cb6e2f09238bd97c799e8b7ee51e0510029
+}
+
+Binary: 
+608060405234801561001057600080fd5b5061015b806100206000396000f300608060405260043610610041576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063c298557814610046575b600080fd5b34801561005257600080fd5b5061005b610071565b6040518082815260200191505060405180910390f35b600080606490508073__lib.sol:MathLib_______________________637afbe4f1909160c86040518363ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808381526020018281526020019250505060206040518083038186803b1580156100ee57600080fd5b505af4158015610102573d6000803e3d6000fd5b505050506040513d602081101561011857600080fd5b8101908080519060200190929190505050915050905600a165627a7a72305820e747704086fc06d1d64c0bf96e8b71a21cb6e2f09238bd97c799e8b7ee51e0510029
