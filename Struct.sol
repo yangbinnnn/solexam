@@ -41,4 +41,19 @@ contract StructContract {
         }
         return (player.id, player.name);
     }
+    
+    // return struct, now must be internal
+    function getPlay(uint256 id) internal view returns(Player) {
+        require(id > 0);
+        id -= 1;
+        return PlayersArr[id];
+    }
+    
+    function printPlayer(uint256 id) public view returns(uint256, string) {
+        Player memory player = getPlay(id);
+        if (player.id == 0) {
+            return (0, "");
+        }
+        return (player.id, player.name);
+    }
 }
