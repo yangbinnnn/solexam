@@ -56,4 +56,6 @@ contract StructContract {
         }
         return (player.id, player.name);
     }
+    
+
 }

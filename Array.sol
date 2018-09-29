@@ -43,4 +43,8 @@ contract ArrayContract {
     //     memBoolPool[i] = b;
     //     return memBoolPool.length;
     // }
+    
+    function arrayParams(uint256[] nums) public pure returns (uint256 n) {
+        return nums.length;
+    }
 }
